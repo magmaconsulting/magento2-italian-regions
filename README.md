@@ -1,7 +1,8 @@
 # Magento2 Italian Regions
 
-A Magento 2 module that adds Italian regions (provinces)
+A Magento 2 module that adds Italian regions (provinces). 
 
+Modulo province italiane per Magento 2
 
 ## Install module:
 
