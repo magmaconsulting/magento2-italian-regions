@@ -72,7 +72,7 @@ class InstallData implements InstallDataInterface
             'FE' => 'Ferrara',
             'FI' => 'Firenze',
             'FG' => 'Foggia',
-            'FC' => 'Forl�-Cesena',
+            'FC' => 'Forlì-Cesena',
             'FR' => 'Frosinone',
             'GE' => 'Genova',
             'GO' => 'Gorizia',
