@@ -43,6 +43,8 @@ class UpgradeData implements UpgradeDataInterface {
                     echo "\nUPDATE $code (region_id: $regionId) IN $name\n";
                     $sql = "UPDATE directory_country_region_name SET name = '$name' where locale like 'it_IT' and region_id = $regionId";
                     $setup->getConnection()->query($sql);
+                } else {
+                    echo "\nERROR UPDATING $code IN $name: regionId not found in directory_country_region table.\n";
                 }
             }
         }
