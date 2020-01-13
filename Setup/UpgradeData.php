@@ -36,15 +36,15 @@ class UpgradeData implements UpgradeDataInterface {
             ];
 
             foreach ($data as $code => $name) {
-                $sql = "SELECT region_id from directory_country_region where code like '$code' and country_id like 'IT'";
+                $sql = "SELECT region_id from " . $setup->getTable('directory_country_region') . " where code like '$code' and country_id like 'IT'";
                 $regionIdArray = $setup->getConnection()->fetchAll($sql);
                 if (count($regionIdArray) == 1) {
                     $regionId = $regionIdArray[0]['region_id'];
                     echo "\nUPDATE $code (region_id: $regionId) IN $name\n";
-                    $sql = "UPDATE directory_country_region_name SET name = '$name' where locale like 'it_IT' and region_id = $regionId";
+                    $sql = "UPDATE " . $setup->getTable('directory_country_region_name') . " SET name = '$name' where locale like 'it_IT' and region_id = $regionId";
                     $setup->getConnection()->query($sql);
                 } else {
-                    echo "\nERROR UPDATING $code IN $name: regionId not found in directory_country_region table.\n";
+                    echo "\nERROR UPDATING $code IN $name: regionId not found in " . $setup->getTable('directory_country_region') . " table.\n";
                 }
             }
         }
